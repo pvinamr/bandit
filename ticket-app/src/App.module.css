@@ -1,0 +1,13 @@
+* {
+  background-color: #eee2de;
+  font-family: "SF";
+}
+@font-face {
+  font-family: "SF";
+  src: url("./fonts/San-Francisco/otf/SFNSDisplay-Thin.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.background {
+  background-color: #eee2de;
+}

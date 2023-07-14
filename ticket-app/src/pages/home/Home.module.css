@@ -1,8 +1,29 @@
 .page {
   background-color: #eee2de;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 .header {
   color: #2b2a4c;
   text-align: center;
   font-size: 5rem;
+}
+.inputBox {
+  background-color: #ea906c;
+  color: #2b2a4c;
+  width: 700px;
+  height: 60px;
+  padding: 10px;
+  font-size: 36px;
+  border: white;
+  border-radius: 20px;
+  margin-bottom: 50px;
+  text-align: center;
+  outline: none;
+}
+.resultPadding {
+  padding: 1rem;
 }

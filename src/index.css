@@ -1,0 +1,108 @@
+body {
+  background-color: #eee2de;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.rectangle {
+  position:relative;
+  width: 30%;
+  height: 600px;
+  margin: 10px;
+
+}
+
+#rectangle1 {
+  top: 35px;
+  left:30px;
+  background-color: #ea906c;
+}
+
+#rectangle1::before {
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  position:absolute;
+  content: "seatgeek";
+  font-size: 30px; /* Change the font size */
+  top:5%; /* Change the vertical positioning */
+  left: 50%; /* Change the horizontal positioning */
+  transform: translateX(-50%);
+  color: #2B2A4C;
+}
+
+#rectangle1::after {
+  position: absolute;
+  content: "0-100";
+  font-size: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #2B2A4C;
+}
+
+#rectangle2::before {
+  position:absolute;
+  content: "ticketmaster";
+  font-size: 30px; /* Change the font size */
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  top: 5%; /* Change the vertical positioning */
+  left: 50%; /* Change the horizontal positioning */
+  transform: translateX(-50%);
+  color: #2b2a4c
+}
+
+#rectangle2::after {
+  position: absolute;
+  content: "0-100";
+  font-size: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #2B2A4C;
+}
+
+#rectangle3::before {
+  position:absolute;
+  content: "stubhub";
+  font-size: 30px; /* Change the font size */
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  top: 5%; /* Change the vertical positioning */
+  left: 50%; /* Change the horizontal positioning */
+  transform: translateX(-50%);
+  color: #2b2a4c
+}
+
+#rectangle3::after {
+  position: absolute;
+  content: "0-100";
+  font-size: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #2B2A4C;
+}
+
+#rectangle2 {
+  bottom: 575px;
+  left: 530px;
+  background-color: #ea906c;
+}
+
+#rectangle3 {
+  bottom:1185px;
+  left: 1030px;
+  background-color: #ea906c;
+}
+
+

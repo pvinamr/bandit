@@ -1,1 +1,0 @@
-Ticket Price Comparison App

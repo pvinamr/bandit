@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import axios from "axios";
 import styles from "./Home.module.css";
 import SearchResult from "./SearchResult";
+import { TM_KEY } from "../../config";
 
 export default function Home() {
   const [inputValue, setInputValue] = useState("");
@@ -17,23 +19,31 @@ export default function Home() {
     }
   };
 
-  const handleSearch = () => {
-    // Perform search logic here using the inputValue
-    // For demonstration purposes, I'll just add a dummy search result
-    const newItem = [
-      {
-        name: "Test Name",
-        date: "Test Date",
-        location: "Test Location",
-      },
-      {
-        name: "Test Name 2",
-        date: "Test Date 2",
-        location: "Test Location 2",
-      },
-    ];
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    const date = new Date(dateString);
+    return date.toLocaleDateString(undefined, options);
+  };
 
-    setSearchResults(newItem);
+  const handleSearch = () => {
+    const url = `https://app.ticketmaster.com/discovery/v2/events.json?keyword=${inputValue}&apikey=${TM_KEY}`;
+
+    axios
+      .get(url)
+      .then((response) => {
+        const newItem = response.data._embedded.events.map((event) => ({
+          id: event.id,
+          name: event.name,
+          date: formatDate(event.dates.start.localDate),
+          location: event._embedded.venues[0].name,
+        }));
+        setSearchResults(newItem);
+      })
+      .catch((error) => {
+        console.error("Error fetching search results:", error);
+        setSearchResults([]);
+      });
+
     setInputValue("");
   };
 
@@ -52,6 +62,7 @@ export default function Home() {
         {searchResults.map((result, index) => (
           <React.Fragment key={index}>
             <SearchResult
+              id={result.id}
               name={result.name}
               date={result.date}
               location={result.location}

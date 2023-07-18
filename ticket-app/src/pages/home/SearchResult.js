@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./SearchResult.module.css";
 
-export default function SearchResult({ name, date, location }) {
+export default function SearchResult({ id, name, date, location }) {
   const handleClick = () => {
     const eventDetails = `${name} | ${date} | ${location}`;
     alert(eventDetails);
